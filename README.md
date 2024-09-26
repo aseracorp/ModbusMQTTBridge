@@ -2,7 +2,7 @@
 
 'Modbus MQTT Bridge' is a Home Assistant add-on that allows users to easily add Modbus devices to their Home Assistant instance using a simple user interface. This add-on provides a way to connect USB Modbus devices to Home Assistant via MQTT, which can be easily integrated with other devices and sensors.
 
-![main_page](https://raw.githubusercontent.com/MerzSebastian/hassio-ModbusMQTTBridge/main/modbus_mqtt_bridge/documentation/main_page.png)
+![main_page](https://raw.githubusercontent.com/aseracorp/ModbusMQTTBridge/main/modbus_mqtt_bridge/documentation/main_page.png)
 
 # Installation
 
@@ -18,7 +18,7 @@ To install this add-on, follow these steps:
 
 5. Open the menu on the top right and click on Repositories
 
-6. Add the following URL to the input field: https://github.com/MerzSebastian/hassio-ModbusMQTTBridge
+6. Add the following URL to the input field: https://github.com/aseracorp/ModbusMQTTBridge
 
 7. Click on the "Add" button
 
@@ -31,10 +31,10 @@ To install this add-on, follow these steps:
 Once the add-on is installed and configured, open up the provided ui and add your devices.
 
 1. Select a device from the devices list
-   ![device_not_selected](https://raw.githubusercontent.com/MerzSebastian/hassio-ModbusMQTTBridge/main/modbus_mqtt_bridge/documentation/device_not_selected.png)
+   ![device_not_selected](https://raw.githubusercontent.com/aseracorp/ModbusMQTTBridge/main/modbus_mqtt_bridge/documentation/device_not_selected.png)
 
 2. Fill out the additional inputs and press on Add
-   ![device_selected](https://raw.githubusercontent.com/MerzSebastian/hassio-ModbusMQTTBridge/main/modbus_mqtt_bridge/documentation/device_selected.png)
+   ![device_selected](https://raw.githubusercontent.com/aseracorp/ModbusMQTTBridge/main/modbus_mqtt_bridge/documentation/device_selected.png)
 
 Info: Using multiple slaves on the same usb device is curretly untested because I only have a single modbus device on hand.
 

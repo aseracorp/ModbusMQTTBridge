@@ -1,6 +1,4 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
-#FROM alpine:3.14
+FROM alpine:3.14
 
 # Install requirements for add-on
 RUN apk add --no-cache python3
@@ -19,4 +17,4 @@ RUN pip3 install -r requirements.txt
 COPY ui/src /ui/src
 COPY devices /devices
 
-CMD ["/usr/bin/with-contenv", "exec", "python3", "adapter.py"]
+CMD ["python3", "adapter.py"]

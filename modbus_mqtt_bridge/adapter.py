@@ -13,14 +13,14 @@ import subprocess
 from datetime import datetime
 
 # MQTT Setup
-mqtt_response = requests.get("http://supervisor/services/mqtt", headers={ "Authorization": "Bearer " + os.environ.get('SUPERVISOR_TOKEN') }).json()
+""" mqtt_response = requests.get("http://supervisor/services/mqtt", headers={ "Authorization": "Bearer " + os.environ.get('SUPERVISOR_TOKEN') }).json()
 if "data" not in mqtt_response.keys():
     sys.exit('FATAL ERROR | Seems like no mqtt service could be found. Are you sure you installed Mosquitto?')
 else:
-    mqtt_response = mqtt_response["data"]
+    mqtt_response = mqtt_response["data"] """
 client = mqtt.Client()
-client.username_pw_set(username=mqtt_response["username"], password=mqtt_response["password"])
-client.connect(mqtt_response["host"], mqtt_response["port"], 60)
+""" client.username_pw_set(username=mqtt_response["username"], password=mqtt_response["password"]) """
+client.connect("Mosquitto", 1883, 60)
 
 def get_all_devices():
     devices = []
