@@ -11,7 +11,7 @@ function registeredDeviceSelected(event, devices) {
 
 async function loadRegisteredDevices(devicesInfo) {
     document.getElementById('devices-table').getElementsByTagName('tbody')[0].innerHTML = "";
-    const devices = await (await fetch(document.location.pathname + "/api/monitor/devices")).json();
+    const devices = await (await fetch("/api/monitor/devices")).json();
     for (let i = 0; i < devices.length; i++) {
         const device = devices[i];
         const lastItem = devices.length === i + 1;
@@ -46,7 +46,7 @@ async function loadRegisteredDevices(devicesInfo) {
             </td>
         </tr>`.trim();
         template.content.firstChild.getElementsByTagName('svg')[0].addEventListener('click', async (event) => {
-            await fetch(document.location.pathname + "/api/monitor/devices/" + event.target.id, {
+            await fetch("/api/monitor/devices/" + event.target.id, {
                 method: 'DELETE'
             });
             loadRegisteredDevices(devicesInfo);
@@ -60,7 +60,7 @@ async function loadRegisteredDevices(devicesInfo) {
 async function addDeviceToRegistery(devices) {
     if (document.getElementById('add-device-form').checkValidity()) {
         if (true) { // CHECK HERE IF IT IS USB DEVICE (tbd only usb supported for now)
-            await fetch(document.location.pathname + "/api/monitor/devices", {
+            await fetch("/api/monitor/devices", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -80,7 +80,7 @@ async function addDeviceToRegistery(devices) {
 
 
 async function loadSerialPorts() {
-    const serialPorts = await (await fetch(document.location.pathname + "/api/serial")).json();
+    const serialPorts = await (await fetch("/api/serial")).json();
     serialPorts.forEach((device) => {
         const option = document.createElement("option");
         option.innerText = device;
@@ -91,7 +91,7 @@ async function loadSerialPorts() {
 
 // Load available devices
 (async() => {
-    const devices = await (await fetch(document.location.pathname + "/api/devices")).json();
+    const devices = await (await fetch("/api/devices")).json();
     devices.forEach((device) => {
         const option = document.createElement("option");
         const name = device.name + " - " + device.company_name + " " + device.product_name;
